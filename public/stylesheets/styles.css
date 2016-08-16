@@ -1,2 +1,44 @@
-select {
-  font-size: 25px; }
+body {
+  box-sizing: border-box; }
+
+label {
+  font-size: 20px; }
+
+.selectPanel {
+  margin: 20px 10px 20px 10px; }
+
+.content {
+  margin-top: 60px; }
+
+.sidepanel {
+  border: 5px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  background-color: bisque;
+  margin-bottom: 10px; }
+
+#googleMap {
+  background-color: skyblue;
+  border: 5px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  height: 590px; }
+
+.navbar-default {
+  background-color: skyblue; }
+
+.itinerary {
+  background-color: skyblue;
+  border: 5px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px; }
+
+#anImage {
+  width: 100%;
+  height: 500px; }
+
+.selectPlaceholder {
+  margin: 10px 10px 10px 10px; }

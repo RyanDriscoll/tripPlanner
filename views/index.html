@@ -1,29 +1,83 @@
+{% extends "layout.html" %}
 <!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
 
-</head>
-
-<body>
-    <select class="form-control">
+{% block content %}
+  
+  <script src='/js/gMaps.js'></script>
+  
+   <div class="col-lg-8" id="googleMap">
+    
+   </div>
+  
+   <div class="sidepanel col-lg-4">
+      <div class="selectPanel">
+       <label for="hotels">Hotel</label>
+       <select class="form-control" id="hotels">
         {% for hotel in hotels %}
         <option value={{ hotel.name }}>{{hotel.name}}</option>
         {% endfor %}
-    </select>
-
-    <select class="form-control">
-        {% for activity in activities %}
-        <option value={{ activity.name }}>{{activity.name}}</option>
+        </select>
+          
+      </div>
+    <div class="selectPanel">
+        <label for="restaurants">Restaurants</label>
+        <select class="form-control" id="restaurants">
+            {% for restaurant in restaurants %}
+            <option value={{ restaurant.name }}>{{restaurant.name}}</option>
+            {% endfor %}
+        </select>
+        
+    </div>
+    <div class="selectPanel">
+        <label for="activities">Activity</label>
+        <select class="form-control" id="activities">
+            {% for activity in activities %}
+            <option value={{ activity.name }}>{{activity.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+   </div>
+   
+   <div class="itinerary col-lg-4">
+       <div class="itinerary-buttons">
+            <button class="btn btn-default">Day</button>
+            <button class="btn btn-default">1</button>
+            <button class="btn btn-default">2</button>
+            <button class="btn btn-default">3</button>
+       </div>
+       
+       <div class="itinerary-container">
+           <div class="selectPlaceholder">
+       <label for="hotels">Hotel</label>
+       <select class="form-control" id="hotels">
+        {% for hotel in hotels %}
+        <option value={{ hotel.name }}>{{hotel.name}}</option>
         {% endfor %}
-    </select>
+        </select>
+          
+      </div>
+    <div class="selectPlaceholder">
+        <label for="restaurants">Restaurants</label>
+        <select class="form-control" id="restaurants">
+            {% for restaurant in restaurants %}
+            <option value={{ restaurant.name }}>{{restaurant.name}}</option>
+            {% endfor %}
+        </select>
+        
+    </div>
+    <div class="selectPlaceholder">
+        <label for="activities">Activity</label>
+        <select class="form-control" id="activities">
+            {% for activity in activities %}
+            <option value={{ activity.name }}>{{activity.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+       </div>
+   </div>
+   
+    
 
-    <select class="form-control">
-        {% for restaurant in restaurants %}
-        <option value={{ restaurant.name }}>{{restaurant.name}}</option>
-        {% endfor %}
-    </select>
-</body>
+{% endblock %}
 
-</html>
+
