@@ -17,4 +17,6 @@ var schema = {
 
 var config = {};
 
+Activity.belongsTo(Place);
+
 module.exports.Activity = Activity;
