@@ -1,36 +1,15 @@
-var Sequelize = require('sequelize');
-var db = new Sequelize('postgres://localhost:5432/tripplanner', {
-    logging: false
-});
+var Place = require('./place').Place;
+var Hotel = require('./hotel').Hotel;
+var Activity = require('./activity').Activity;
+var Restaurant = require('./restaurant').Restaurant;
 
-var Promise = require('bluebird');
-
-var Place = db.define('place', placeTypes, config);
-
-var placeTypes = {
-    address: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    city: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    state: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    phone: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    location: {
-        type: Sequelize.ARRAY(Sequelize.FLOAT),
-    }
-};
-
-var config = {};
+Hotel.belongsTo(Place);
+Activity.belongsTo(Place);
+Restaurant.belongsTo(Place);
 
 module.exports = {
-    Place: Place
+    Place: Place,
+    Hotel: Hotel,
+    Activity: Activity,
+    Restaurant: Restaurant
 };
