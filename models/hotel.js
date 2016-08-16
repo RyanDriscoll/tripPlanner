@@ -1,9 +1,9 @@
 var Sequelize = require('sequelize');
-var db = new Sequelize('postgres://localhost:5432/tripplanner', {
-    logging: false
-});
+var db = require('./db');
+var Place = require('./place').Place;
 
-var Hotel = db.define('hotel', schema, config);
+
+
 
 var schema = {
     name: {
@@ -19,6 +19,9 @@ var schema = {
 };
 
 var config = {};
+
+var Hotel = db.define('hotel', schema, config);
+
 
 Hotel.belongsTo(Place);
 

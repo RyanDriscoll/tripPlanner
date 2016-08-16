@@ -1,9 +1,8 @@
 var Sequelize = require('sequelize');
-var db = new Sequelize('postgres://localhost:5432/tripplanner', {
-    logging: false
-});
+var db = require('./db');
+var Place = require('./place').Place;
 
-var Restaurant = db.define('restaurant', schema, config);
+
 
 var schema = {
     name: {
@@ -20,6 +19,9 @@ var schema = {
 
 var config = {};
 
+
+var Restaurant = db.define('restaurant', schema, config);
 Restaurant.belongsTo(Place);
+
 
 module.exports.Restaurant = Restaurant;

@@ -1,9 +1,5 @@
 var Sequelize = require('sequelize');
-var db = new Sequelize('postgres://localhost:5432/tripplanner', {
-    logging: false
-});
-
-var Place = db.define('place', schema, config);
+var db = require('./db');
 
 var schema = {
     address: {
@@ -28,5 +24,8 @@ var schema = {
 };
 
 var config = {};
+
+var Place = db.define('place', schema, config);
+
 
 module.exports.Place = Place;

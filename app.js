@@ -21,17 +21,21 @@ app.set('views', __dirname + '/views');
 
 app.use('/', routes);
 
-var syncs = [Hotel.sync({force: true}), Activity.sync({force: true}), Restaurant.sync({force: true}), Place.sync({force: true})];
+// var syncs = [Hotel.sync({force: true}), Activity.sync({force: true}), Restaurant.sync({force: true}), Place.sync({force: true})];
 
-Promise.each(syncs)
-.then(function() {
-    app.listen(3000, function() {
+// Promise.each(syncs)
+// .then(function() {
+//     app.listen(3000, function() {
+//         console.log('listening on port 3000!');
+//     })
+// })
+// .catch(function(err) {
+//     throw err;
+// });
+
+app.listen(3000, function() {
         console.log('listening on port 3000!');
-    })
-})
-.catch(function(err) {
-    throw err;
-});
+    });
 
 
 app.use(function(req, res, next) {
@@ -44,9 +48,6 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   console.error(err);
-  res.render(
-    // ... fill in this part
-  );
 });
 
 

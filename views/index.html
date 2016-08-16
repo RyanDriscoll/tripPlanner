@@ -6,7 +6,23 @@
 </head>
 
 <body>
-    <p>Here is the trip planner!</p>
+    <select>
+        {% for hotel in hotels %}
+        <option value={{ hotel.name }}>{{hotel.name}}</option>
+        {% endfor %}
+    </select>
+
+    <select>
+        {% for activity in activities %}
+        <option value={{ activity.name }}>{{activity.name}}</option>
+        {% endfor %}
+    </select>
+
+    <select>
+        {% for restaurant in restaurants %}
+        <option value={{ restaurant.name }}>{{restaurant.name}}</option>
+        {% endfor %}
+    </select>
 </body>
 
 </html>
