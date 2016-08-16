@@ -16,6 +16,8 @@ app.use('/', morgan('dev'));
 app.engine('html', swig.renderFile);
 swig.setDefaults({ cache: false });
 app.use(express.static('./public'));
+app.use('/bootstrap', express.static('./node_modules/bootstrap/dist'));
+app.use('/jquery', express.static('./node_modules/jquery/dist'));
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 

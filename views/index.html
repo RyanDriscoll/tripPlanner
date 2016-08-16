@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
 
 </head>
 
 <body>
-    <select>
+    <select class="form-control">
         {% for hotel in hotels %}
         <option value={{ hotel.name }}>{{hotel.name}}</option>
         {% endfor %}
     </select>
 
-    <select>
+    <select class="form-control">
         {% for activity in activities %}
         <option value={{ activity.name }}>{{activity.name}}</option>
         {% endfor %}
     </select>
 
-    <select>
+    <select class="form-control">
         {% for restaurant in restaurants %}
         <option value={{ restaurant.name }}>{{restaurant.name}}</option>
         {% endfor %}
